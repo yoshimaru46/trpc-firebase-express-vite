@@ -18,7 +18,7 @@ type User = {
 };
 
 const t = initTRPC.context<Context>().create();
-export const appRouter = t.router({
+const appRouter = t.router({
   getUser: t.procedure.input(z.string()).query((req) => {
     req.input; // string
     return { id: req.input, name: "Bilbo" } as User;
